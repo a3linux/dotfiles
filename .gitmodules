@@ -1,3 +1,6 @@
 [submodule "dotvim/pack/a3linux/start/vim-sensible"]
 	path = dotvim/pack/a3linux/start/vim-sensible
 	url = https://github.com/a3linux/vim-sensible
+[submodule "dotvim/pack/thirds/start/papercolor-theme"]
+	path = dotvim/pack/thirds/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
