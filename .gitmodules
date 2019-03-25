@@ -4,3 +4,9 @@
 [submodule "dotvim/pack/thirds/start/papercolor-theme"]
 	path = dotvim/pack/thirds/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "dotvim/pack/thirds/start/vim-airline"]
+	path = dotvim/pack/thirds/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "dotvim/pack/thirds/start/vim-airline-themes"]
+	path = dotvim/pack/thirds/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
