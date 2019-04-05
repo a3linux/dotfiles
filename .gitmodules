@@ -10,3 +10,6 @@
 [submodule "dotvim/pack/thirds/start/vim-airline-themes"]
 	path = dotvim/pack/thirds/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "dotvim/pack/thirds/start/fzf.vim"]
+	path = dotvim/pack/thirds/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git

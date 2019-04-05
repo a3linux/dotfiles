@@ -1,0 +1,120 @@
+" .vimrc
+" For Vim8 and plugin manage with pack
+" Keep this file simple and good comments
+"
+" version: 0.0.1(Fri 22 Mar 2019 01:02:30 PM UTC)
+
+set nocp
+
+" GUI font and colorscheme
+if has('gui_running')
+    " columns: 80(editting) + 25(Navigator) + 3(flag & symbols)
+    set columns=108 lines=64
+    colorscheme solarized
+    if has("gui_macvim")
+        set guifont=Inconsolata-g\ for\ Powerline:h14
+    else
+        set guifont=Inconsolata-g\ for\ Powerline\ Medium\ 11
+        set guioptions-=m
+        set guioptions-=T
+        set guioptions-=r
+        set guioptions-=L
+    endif
+endif
+
+" Private Key maps
+" leader key to <blank>
+let mapleader=' '
+" Tab new
+map tt :tabnew
+" split windows in new tab
+map ts :tab split<CR>
+
+" netrw file explorer
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+" browser open file mode: 3 to new tab, 4 to preview windows
+let g:netrw_browse_split = 4 
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+let g:netrw_hide = 1
+" Toggle Vexplore with <leader>e
+function! ToggleVExplorer()
+    if exists("t:expl_buf_num")
+        let expl_win_num = bufwinnr(t:expl_buf_num)
+        let cur_win_num = winnr()
+        if expl_win_num != -1
+            while expl_win_num != cur_win_num
+                exec "wincmd w"
+                let cur_win_num = winnr()
+            endwhile
+            close
+        endif
+        unlet t:expl_buf_num
+    else
+         Vexplore
+         let t:expl_buf_num = bufnr("%")
+    endif
+endfunction
+map <leader>e :call ToggleVExplorer()<CR>
+" end netrw
+
+" Plugin settings
+" Colorscheme PaperColor-theme settings
+if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256\|xterm-256color'
+    let &t_Co = 256
+    colorscheme PaperColor
+    set background=dark " Set this again to confirm it is working
+else
+    colorscheme  delek
+endif
+let g:PaperColor_Theme_Options = {
+            \ 'language': {
+            \   'python': {
+            \       'highlight_builtins': 1
+            \   }
+            \},
+            \ 'theme': {
+            \   'default.dark': {
+            \       'transparent_background': 1
+            \       }
+            \   }
+            \}
+" end of PaperColor-theme
+" Statusbar vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'papercolor'
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tmuxline#enabled = 1
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#hunks#non_zero_only = 1
+" end vim-airline
+" FZF fuzzy finding
+nnoremap <C-p> :FZF -m<CR>
+" Search buffers with;
+nnoremap <Leader>b :Buffers<CR>
+
+"
+" End Plugin settings
+
+" different ts
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType ejs setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType Jenkinsfile setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Ignore python 3.7 import warning for old plugins
+if has('python3')
+    silent! python3 1
+endif

@@ -1,11 +1,14 @@
 [user]
-	name = Allen Chen
-	email = a3linux@gmail.com
+    name = Allen Chen
+    email = <email@address.com>
 
 [core]
     editor = vim
+
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interative = true
+    diff = auto
+    status = auto
+    branch = auto
+    interative = true
+
+# vim: ts=4 sw=4 filetype=gitconfig
