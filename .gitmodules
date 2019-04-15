@@ -16,3 +16,42 @@
 [submodule "dotvim/pack/thirds/start/ale"]
 	path = dotvim/pack/thirds/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "dotvim/pack/thirds/start/asyncomplete.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim.git
+[submodule "dotvim/pack/thirds/start/vim-lsp"]
+	path = dotvim/pack/thirds/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp.git
+[submodule "dotvim/pack/thirds/start/async.vim"]
+	path = dotvim/pack/thirds/start/async.vim
+	url = https://github.com/prabirshrestha/async.vim.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-buffer.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-buffer.vim
+	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
+[submodule "dotvim/pack/thirds/start/asyncomplete-file.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-file.vim
+	url = https://github.com/prabirshrestha/asyncomplete-file.vim.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-emoji.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-emoji.vim
+	url = https://github.com/prabirshrestha/asyncomplete-emoji.vim.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-omni.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-omni.vim
+	url = https://github.com/yami-beta/asyncomplete-omni.vim.git
+[submodule "dotvim/pack/thirds/start/ultisnips"]
+	path = dotvim/pack/thirds/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "dotvim/pack/thirds/start/vim-snippets"]
+	path = dotvim/pack/thirds/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-ultisnips.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-ultisnips.vim
+	url = https://github.com/prabirshrestha/asyncomplete-ultisnips.vim.git
+[submodule "dotvim/pack/thirds/start/vim-gutentags"]
+	path = dotvim/pack/thirds/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-tags.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-tags.vim
+	url = https://github.com/prabirshrestha/asyncomplete-tags.vim.git
+[submodule "dotvim/pack/thirds/start/asyncomplete-lsp.vim"]
+	path = dotvim/pack/thirds/start/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git

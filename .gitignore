@@ -2,3 +2,4 @@
 *.tmp
 *.log
 dotvim/.netrwhist
+tags

@@ -123,6 +123,145 @@ let g:ale_fixers = {
 \   'python': ['autopep8', 'pyls'],
 \}
 
+" Asyncomplete.vim
+" Tab completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+let g:asyncomplete_auto_popup = 1
+
+" asyncomplete-file.vim
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+\ 'name': 'file',
+\ 'whitelist': ['*'],
+\ 'priority': 5,
+\ 'completor': function('asyncomplete#sources#file#completor'),
+\ }))
+
+" asyncomplete-buffer.vim
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+\ 'name': 'buffer',
+\ 'whitelist': ['*'],
+\ 'blacklist': ['go'],
+\ 'completor': function('asyncomplete#sources#buffer#completor'),
+\ }))
+" asyncomplete-emoji.vim
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
+\ 'name': 'emoji',
+\ 'whitelist': ['*'],
+\ 'completor': function('asyncomplete#sources#emoji#completor'),
+\ }))
+" asyncomplete-omni.vim
+autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+\ 'name': 'omni',
+\ 'whitelist': ['*'],
+\ 'blacklist': ['c', 'cpp', 'html'],
+\ 'completor': function('asyncomplete#sources#omni#completor')
+\  }))
+" asyncomplete-ultisnips.vim
+if has('python3')
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsListSnippets="<F2>"
+    let g:UltiSnipsEditSplit="vertical"
+    autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+        \ 'name': 'ultisnips',
+        \ 'whitelist': ['*'],
+        \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+        \ }))
+endif
+" asyncomplete-tags.vim
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
+    \ 'name': 'tags',
+    \ 'whitelist': ['c'],
+    \ 'completor': function('asyncomplete#sources#tags#completor'),
+    \ 'config': {
+    \    'max_file_size': 50000000,
+    \  },
+    \ }))
+" vim-lsp
+" Python [ pyls ]
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+" javascript
+if executable('typescript-language-server')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'javascript support using typescript-language-server',
+    \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+    \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'package.json'))},
+    \ 'whitelist': ['javascript', 'javascript.jsx'],
+    \ })
+else
+  echohl ErrorMsg
+  echom 'Sorry, `typescript-language-server` is not installed. See `:help vim-lsp-javascript` for more details on setup.'
+  echohl NONE
+endif
+" typescript
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript', 'typescript.tsx'],
+        \ })
+endif
+" Go [ go-langserver ]
+if executable('go-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'go-langserver',
+        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
+" dockerfile
+if executable('docker-langserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'docker-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+        \ 'whitelist': ['dockerfile'],
+        \ })
+endif
+" ruby
+if executable('solargraph')
+    " gem install solargraph
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'solargraph',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+        \ 'initialization_options': {"diagnostics": "true"},
+        \ 'whitelist': ['ruby'],
+        \ })
+endif
+" PHP [ intelephense ]
+au User lsp_setup call lsp#register_server({
+    \ 'name': 'intelephense',
+    \ 'cmd': {server_info->['node', expand('PATH_TO_GLOBAL_NODE_MODULES/intelephense/lib/intelephense.js'), '--stdio']},
+    \ 'initialization_options': {"storagePath": "PATH_TO_TEMP_FOLDER/intelephense"},
+    \ 'whitelist': ['php'],
+    \ })
+" bash
+if executable('bash-language-server')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'bash-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+        \ 'whitelist': ['sh'],
+        \ })
+endif
+" css
+if executable('css-languageserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'css-languageserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
+        \ 'whitelist': ['css', 'less', 'sass'],
+        \ })
+endif
+
+" End vim-lsp
+
 "
 " End Plugin settings
 

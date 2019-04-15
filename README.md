@@ -51,3 +51,93 @@ fzf.vim - A FZF vim plugin install into dotvim/pack/third/start already.
 ### Install rg(ripgrep) and ag
 
 fzf.vim integrate file search tool rg and ag already with command *Rg* and *Ag*
+
+## ALE, LSP, Auto Complete in Vim8
+
+Language server protocol is used for many advanced editors. Here are some documents about LSP and configurations in Vim.
+
+Sample of LSP for different languages, 
+
+```
+c	['clangd']
+cpp	['clangd']
+css	['css-languageserver', '--stdio']
+dart	['dart_language_server']
+go	['go-langserver', '-mode', 'stdio']
+haskell	['hie', '--lsp']
+html	['html-languageserver', '--stdio']
+javascript	['javascript-typescript-stdio']
+julia	['julia', '--startup-file=no', '--history-file=no', '-e', 'using LanguageServer; server = LanguageServer.LanguageServerInstance(STDIN, STDOUT, false); server.runlinter = true; run(server);']
+objc	['clangd']
+objcpp	['clangd']
+php	['php', 'path/to/bin/php-language-server.php']
+purescript	['purescript-language-server', '--stdio']
+python	['pyls']
+ruby	['solargraph', 'stdio']
+rust	['rustup', 'run', 'nightly', 'rls']
+sh	['bash-language-server', 'start']
+typescript	['typescript-language-server', '--stdio']
+vue	['vls']
+```
+
+Samples to install language server(s)
+
+* Bash
+```
+npm i -g bash-language-server
+```
+* JavaScript:
+```
+npm install -g javascript-typescript-langserver
+```
+* Python:
+```
+pip install --user python-language-server
+```
+* PureScript
+```
+npm install -g purescript-language-server
+```
+* Vue:
+```
+npm install vue-language-server -g
+```
+* css:
+```
+npm install -g vscode-css-languageserver-bin
+```
+* ruby:
+```
+gem install solargraph
+```
+
+### LSP and ALE
+
+Language server is used by two major Vim plugins, first is the ALE, the syntax checker and fixer, the other one should be autocomplete one.
+
+For ALE the configuration item *g:ale_linters* and *g:ale_fixers* just figure out the usage.
+
+### Language server plugins vim-lsp
+
+This plugin depends on *async.vim*.
+
+The *asyncomplete.vim* work with *asyncomplete-lsp.vim* to support vim-lsp.
+
+Most of the language servers register to *vim-lsp* in _dotvimrc_
+
+### Asyncomplete.vim - A pure vim script async auto completion
+
+#### Why asyncomplete.vim?
+
+* Async completion framework
+* Vim script
+* Good pipiline with Framework + Sources
+
+Sources: 
+* vim-lsp, refer to above section of LSP
+* asyncomplete-buffer.vim
+* asyncomplete-emoji.vim
+* asyncomplete-file.vim
+* asyncomplete-tags.vim [ vim-gutentags ]
+* asyncomplete-omni.vim
+* asyncomplete-ultisnips.vim [ UltiSnips + vim-snippets ]
