@@ -13,3 +13,6 @@
 [submodule "dotvim/pack/thirds/start/fzf.vim"]
 	path = dotvim/pack/thirds/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "dotvim/pack/thirds/start/ale"]
+	path = dotvim/pack/thirds/start/ale
+	url = https://github.com/w0rp/ale.git
