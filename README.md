@@ -10,9 +10,18 @@ Most common dotfiles used both for Linux and MacOS working environemnts to repla
 
 ## Plugins managed by vim 8 native way and git submodule
 
+### Add new plugin with git submodule
 1. git submodule add <github-repo-url> <path-to-plugin>
 2. git commit -m "Added submodules"
-3. git clone --recursive <this-repos-url>
+
+### Using plugins with git submodules
+
+1. git clone --recursive <this-repos-url> or git submodule update --init --recursive
+
+### Update plugins with git submodule
+
+1. Pull submodule: git pull --recurse-submodules or git submodule update --remote
+2. Git submodule deattach: git submodule foreach 'git reset --hard'
 
 ### To delete a added plugin
 

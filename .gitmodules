@@ -55,3 +55,30 @@
 [submodule "dotvim/pack/thirds/start/asyncomplete-lsp.vim"]
 	path = dotvim/pack/thirds/start/asyncomplete-lsp.vim
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+[submodule "dotvim/pack/thirds/start/vim-better-whitespace"]
+	path = dotvim/pack/thirds/start/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule "dotvim/pack/thirds/start/vim-surround"]
+	path = dotvim/pack/thirds/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "dotvim/pack/thirds/start/vim-repeat"]
+	path = dotvim/pack/thirds/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "dotvim/pack/thirds/start/vim-fugitive"]
+	path = dotvim/pack/thirds/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "dotvim/pack/thirds/start/vim-git"]
+	path = dotvim/pack/thirds/start/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "dotvim/pack/thirds/start/auto-pairs"]
+	path = dotvim/pack/thirds/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "dotvim/pack/thirds/start/vim-autoclose"]
+	path = dotvim/pack/thirds/start/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
+[submodule "dotvim/pack/thirds/start/vim-gitgutter"]
+	path = dotvim/pack/thirds/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "dotvim/pack/thirds/start/tagbar"]
+	path = dotvim/pack/thirds/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git

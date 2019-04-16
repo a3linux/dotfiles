@@ -34,7 +34,7 @@ map ts :tab split<CR>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 " browser open file mode: 3 to new tab, 4 to preview windows
-let g:netrw_browse_split = 4 
+let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 let g:netrw_hide = 1
@@ -94,7 +94,15 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#hunks#non_zero_only = 1
 " end vim-airline
+
 " FZF fuzzy finding
+if has('unix')
+    if system('uname') =~ 'Darwin'
+        set rtp+=/usr/local/opt/fzf
+    else
+        set rtp+=~/.fzf
+    endif
+endif
 nnoremap <C-p> :FZF -m<CR>
 " Search buffers with;
 nnoremap <Leader>b :Buffers<CR>
@@ -109,6 +117,9 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'normal'
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_list_window_size = 5
 " Always show sign column
 let g:ale_sign_column_always = 1
 " ALE Linters
@@ -120,15 +131,18 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
-\   'python': ['autopep8', 'pyls'],
+\   'python': ['autopep8'],
 \}
 
 " Asyncomplete.vim
 " Tab completion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-let g:asyncomplete_auto_popup = 1
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+" let g:asyncomplete_auto_popup = 1
+imap <c-space> <Plug>{asyncomplete_force_refresh}
+set completeopt+=preview
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " asyncomplete-file.vim
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
@@ -262,7 +276,14 @@ endif
 
 " End vim-lsp
 
-"
+" Fix to let ESC work as escape with AutoClose plugin
+let g:AutoClosePumvisible = { "ENTER": "\<C-Y>", "ESC": "\<ESC>" }
+
+" TagBar
+nmap <leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+
 " End Plugin settings
 
 " different ts
