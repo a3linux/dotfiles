@@ -88,3 +88,6 @@
 [submodule "dotvim/pack/thirds/start/Jenkinsfile-vim-syntax"]
 	path = dotvim/pack/thirds/start/Jenkinsfile-vim-syntax
 	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule "dotvim/pack/thirds/start/vim-terraform"]
+	path = dotvim/pack/thirds/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
