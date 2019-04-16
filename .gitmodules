@@ -82,3 +82,9 @@
 [submodule "dotvim/pack/thirds/start/tagbar"]
 	path = dotvim/pack/thirds/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "dotvim/pack/thirds/start/groovy.vim"]
+	path = dotvim/pack/thirds/start/groovy.vim
+	url = https://github.com/vim-scripts/groovy.vim.git
+[submodule "dotvim/pack/thirds/start/Jenkinsfile-vim-syntax"]
+	path = dotvim/pack/thirds/start/Jenkinsfile-vim-syntax
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
