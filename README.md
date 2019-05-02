@@ -20,7 +20,12 @@ Most common dotfiles used both for Linux and MacOS working environments to repla
 
 ### Update plugins with git submodule
 
-1. Pull submodule: git pull --recurse-submodules or git submodule update --remote
+1. Git update
+
+```
+git submodule foreach git pull origin master
+```
+
 2. Git submodule deattach: git submodule foreach 'git reset --hard'
 
 ### To delete a added plugin
