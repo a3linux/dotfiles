@@ -91,3 +91,9 @@
 [submodule "dotvim/pack/thirds/start/vim-terraform"]
 	path = dotvim/pack/thirds/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "dotvim/pack/thirds/start/nerdcommenter"]
+	path = dotvim/pack/thirds/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "dotvim/pack/thirds/start/vim-lexical"]
+	path = dotvim/pack/thirds/start/vim-lexical
+	url = https://github.com/reedes/vim-lexical.git

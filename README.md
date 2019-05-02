@@ -2,19 +2,19 @@ Dotfiles
 ==================
 
 ## Overview
-Most common dotfiles used both for Linux and MacOS working environemnts to replace the old my.config.
+Most common dotfiles used both for Linux and MacOS working environments to replace the old my.config.
 
 1. Vim 8 really introduces many modern features to avoid using many of old plugins and ways
-2. Rely on git submodules to better management of plugins of Vim 8
-3. Clean roadmap and document for dotfiles
+2. Rely on git submodule(s) to better management of plugins of Vim 8
+3. Clearly management and document for dotfiles
 
 ## Plugins managed by vim 8 native way and git submodule
 
 ### Add new plugin with git submodule
 1. git submodule add <github-repo-url> <path-to-plugin>
-2. git commit -m "Added submodules"
+2. git commit -m "Added submodule"
 
-### Using plugins with git submodules
+### Using plugins with git submodule
 
 1. git clone --recursive <this-repos-url> or git submodule update --init --recursive
 

@@ -10,7 +10,7 @@ set nocp
 if has('gui_running')
     " columns: 80(editting) + 25(Navigator) + 3(flag & symbols)
     set columns=108 lines=64
-    colorscheme solarized
+    colorscheme PaperColor
     if has("gui_macvim")
         set guifont=Inconsolata-g\ for\ Powerline:h14
     else
@@ -120,6 +120,9 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 5
+" <leader>f to Format Fix by ALE
+nnoremap <Leader>f :ALEFix<CR>
+
 " Always show sign column
 let g:ale_sign_column_always = 1
 " ALE Linters
@@ -138,11 +141,10 @@ let g:ale_fixers = {
 " Tab completion
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-" let g:asyncomplete_auto_popup = 1
-imap <c-space> <Plug>{asyncomplete_force_refresh}
-set completeopt+=preview
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+inoremap <expr> <C-y> pumvisible() ? asyncomplete#close_popup() : "\<C-y>"
+inoremap <expr> <C-e> pumvisible() ? asyncomplete#cancel_popup() : "\<C-e>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <C-q> <Plug>(asyncomplete_force_refresh) asyncomplete#force_refresh()
 
 " asyncomplete-file.vim
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
@@ -163,6 +165,7 @@ autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#s
 autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
 \ 'name': 'emoji',
 \ 'whitelist': ['*'],
+\ 'priority': 10,
 \ 'completor': function('asyncomplete#sources#emoji#completor'),
 \ }))
 " asyncomplete-omni.vim
@@ -170,6 +173,7 @@ autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#s
 \ 'name': 'omni',
 \ 'whitelist': ['*'],
 \ 'blacklist': ['c', 'cpp', 'html'],
+\ 'priority': 0,
 \ 'completor': function('asyncomplete#sources#omni#completor')
 \  }))
 " asyncomplete-ultisnips.vim
@@ -180,13 +184,15 @@ if has('python3')
     autocmd User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
         \ 'name': 'ultisnips',
         \ 'whitelist': ['*'],
+        \ 'priority': 2,
         \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
         \ }))
 endif
 " asyncomplete-tags.vim
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
     \ 'name': 'tags',
-    \ 'whitelist': ['c'],
+    \ 'whitelist': ['*'],
+    \ 'priority': 9,
     \ 'completor': function('asyncomplete#sources#tags#completor'),
     \ 'config': {
     \    'max_file_size': 50000000,
@@ -273,7 +279,6 @@ if executable('css-languageserver')
         \ 'whitelist': ['css', 'less', 'sass'],
         \ })
 endif
-
 " End vim-lsp
 
 " Fix to let ESC work as escape with AutoClose plugin
@@ -283,6 +288,14 @@ let g:AutoClosePumvisible = { "ENTER": "\<C-Y>", "ESC": "\<ESC>" }
 nmap <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
+" lexical
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init()
+augroup END
 
 " End Plugin settings
 
