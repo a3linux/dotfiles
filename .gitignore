@@ -1,5 +1,6 @@
 *~
 *.tmp
 *.log
+*.swp
 dotvim/.netrwhist
 tags

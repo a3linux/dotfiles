@@ -97,3 +97,12 @@
 [submodule "dotvim/pack/thirds/start/vim-lexical"]
 	path = dotvim/pack/thirds/start/vim-lexical
 	url = https://github.com/reedes/vim-lexical.git
+[submodule "dotvim/pack/thirds/start/nerdtree"]
+	path = dotvim/pack/thirds/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "dotvim/pack/thirds/start/nerdtree-git-plugin"]
+	path = dotvim/pack/thirds/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+[submodule "dotvim/pack/thirds/start/vim-nerdtree-tabs"]
+	path = dotvim/pack/thirds/start/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs
