@@ -14,6 +14,10 @@ elif [[ ${OSNAME} =~ "Linux" ]]; then
     alias ll="ls -l --color"
 fi
 
+if [[ -x /usr/bin/nodejs-yarn ]]; then
+    alias yarn="nodejs-yarn"
+fi
+
 # Used to use cls as clear
 alias cls="clear"
 
