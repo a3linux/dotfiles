@@ -24,7 +24,9 @@ Most common dotfiles used both for Linux and MacOS working environments to repla
 
 ```
 git submodule foreach git pull origin master
+git commit -am "-Update submodule folders"
 ```
+Be careful to commit other files with _-am_
 
 2. Git submodule deattach: git submodule foreach 'git reset --hard'
 
