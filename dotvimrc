@@ -103,13 +103,13 @@ let g:ale_sign_column_always = 1
 " ALE Linters
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
-\   'python': ['autopep8', 'pyls'],
+\   'python': ['autopep8'],
 \}
 " ALE Fixers
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
-\   'python': ['autopep8'],
+\   'python': ['autopep8', 'yapf'],
 \}
 
 " Asyncomplete.vim
