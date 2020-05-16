@@ -4,3 +4,4 @@
 *.swp
 dotvim/.netrwhist
 tags
+dotvim/pack/kite/*
