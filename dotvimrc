@@ -103,7 +103,7 @@ let g:ale_sign_column_always = 1
 " ALE Linters
 let g:ale_linters = {
 \   'javascript': ['prettier', 'eslint'],
-\   'python': ['autopep8'],
+\   'python': ['pyls'],
 \}
 " ALE Fixers
 let g:ale_fixers = {

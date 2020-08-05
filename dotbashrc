@@ -45,3 +45,16 @@ if [ -f $HOME/.bash_aliases ]; then
 fi
 
 # vim: ts=4 sw=4 filetype=sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/allen/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash ] && . /home/allen/.config/yarn/global/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/allen/.config/yarn/global/node_modules/tabtab/.completions/sls.bash ] && . /home/allen/.config/yarn/global/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /home/allen/.config/yarn/global/node_modules/tabtab/.completions/slss.bash ] && . /home/allen/.config/yarn/global/node_modules/tabtab/.completions/slss.bash
