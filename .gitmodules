@@ -109,3 +109,6 @@
 [submodule "dotvim/pack/thirds/start/vim-autoformat"]
 	path = dotvim/pack/thirds/start/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
+[submodule "dotvim/pack/thirds/start/bufexplorer"]
+	path = dotvim/pack/thirds/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
