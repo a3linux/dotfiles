@@ -276,16 +276,20 @@ augroup END
 " End Plugin settings
 
 " different ts
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType ejs setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType Jenkinsfile setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup setts
+    autocmd!
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType ejs setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType Jenkinsfile setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType groovy setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
 
 " Ignore python 3.7 import warning for old plugins
 if has('python3')

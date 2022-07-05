@@ -11,7 +11,7 @@ fi
 
 brew install python3 virtualenv macvim node@16 npm yarn awscli vault fzf rg ag jq gopls ctags
 
-brew install --cask postman visual-studio-code gimp docker microsoft-remote-desktop nextcloud evernote firefox microsoft-edge google-chrome whatsapp
+brew install --cask postman visual-studio-code gimp docker microsoft-remote-desktop nextcloud evernote firefox microsoft-edge google-chrome whatsapp calibre
 
 # install language servers
 npm install -g typescript-language-server dockerfile-language-server-nodejs bash-language-server vscode-css-languageserver-bin prettier eslint
