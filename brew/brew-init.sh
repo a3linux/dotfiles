@@ -9,7 +9,7 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install python3 virtualenv macvim node@16 npm yarn awscli vault fzf rg ag jq gopls ctags
+brew install python3 virtualenv macvim node@16 npm yarn awscli vault fzf rg ag jq gopls ctags youtube-dl
 
 brew install --cask postman visual-studio-code gimp docker microsoft-remote-desktop nextcloud evernote firefox microsoft-edge google-chrome whatsapp calibre 
 
