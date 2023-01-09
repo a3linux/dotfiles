@@ -10,5 +10,20 @@
     status = auto
     branch = auto
     interative = true
+    pager = true
+    ui = true
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[alias]
+    ci = commit
+    co = checkout
+    st = status -sb
+    lg = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lo = log --oneline
+    la = log --author
 
 # vim: ts=4 sw=4 filetype=gitconfig
