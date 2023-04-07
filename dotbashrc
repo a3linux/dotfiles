@@ -55,7 +55,6 @@ if [ -f $HOME/.bash_aliases ]; then
     . $HOME/.bash_aliases
 fi
 
-# vim: ts=4 sw=4 filetype=sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
@@ -69,3 +68,5 @@ fi
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #
 #eval "$(zoxide init bash)"
+
+# vim: ts=4 sw=4 filetype=sh

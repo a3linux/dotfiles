@@ -25,4 +25,8 @@ if [ -d $HOME/repos ]; then
     alias crepos="cd $HOME/repos"
 fi
 
+if [ -x /usr/bin/podman ]; then
+    # On linux use podman instead of docker
+    alias docker="podman"
+fi
 # vim: ts=4 sw=4 filetype=sh
