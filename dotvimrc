@@ -232,6 +232,14 @@ if executable('solargraph')
                 \ 'whitelist': ['ruby'],
                 \ })
 endif
+" terraform-ls
+if executable('terraform-ls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'terraform-ls',
+        \ 'cmd': {server_info->['terraform-ls', 'serve']},
+        \ 'whitelist': ['terraform'],
+        \ })
+endif
 " PHP [ intelephense ]
 au User lsp_setup call lsp#register_server({
             \ 'name': 'intelephense',
