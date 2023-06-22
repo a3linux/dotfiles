@@ -106,6 +106,13 @@ npm i -g bash-language-server
 ```
 npm install -g javascript-typescript-langserver
 ```
+
+* Typescript
+
+```
+npm install -g typescript-language-server typescript
+```
+
 * Python:
 ```
 pip install --user python-language-server
