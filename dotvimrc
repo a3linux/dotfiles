@@ -299,6 +299,8 @@ augroup setts
     autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
+set nofixeol
+
 " Ignore python 3.7 import warning for old plugins
 if has('python3')
     silent! python3 1
