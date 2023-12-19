@@ -71,13 +71,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 " end vim-airline
 
 " FZF fuzzy finding
-if has('unix')
-    if system('uname') =~ 'Darwin'
-        set rtp+=/usr/local/opt/fzf
-    else
-        set rtp+=~/.fzf
-    endif
-endif
+" Manually set up this path
+set rtp+=~/.fzf
 nnoremap <C-p> :FZF -m<CR>
 " Search buffers with;
 nnoremap <Leader>b :Buffers<CR>
