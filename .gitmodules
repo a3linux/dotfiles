@@ -115,3 +115,6 @@
 [submodule "dotvim/pack/thirds/start/vim-groovy"]
 	path = dotvim/pack/thirds/start/vim-groovy
 	url = https://github.com/thecodesmith/vim-groovy
+[submodule "dotvim/pack/thirds/start/git-lens"]
+	path = dotvim/pack/thirds/start/git-lens
+	url = git@github.com:Eliot00/git-lens.vim.git
