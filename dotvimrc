@@ -296,6 +296,16 @@ augroup END
 
 set nofixeol
 
+" git-lens
+let g:GIT_LENS_ENABLED = 1
+let g:GIT_LENS_CONFIG = {
+        \ 'blame_prefix': '----',
+        \ 'blame_highlight': 'Comment',
+        \ 'blame_wrap': 0,
+        \ 'blame_empty_line': 0,
+        \ 'blame_delay': 800,
+    \ }
+
 " Ignore python 3.7 import warning for old plugins
 if has('python3')
     silent! python3 1
