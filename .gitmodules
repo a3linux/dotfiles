@@ -118,3 +118,6 @@
 [submodule "dotvim/pack/thirds/start/git-lens"]
 	path = dotvim/pack/thirds/start/git-lens
 	url = git@github.com:Eliot00/git-lens.vim.git
+[submodule "dotvim/pack/thirds/start/copilot"]
+	path = dotvim/pack/thirds/start/copilot
+	url = https://github.com/github/copilot.vim.git
