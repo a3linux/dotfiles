@@ -1,0 +1,35 @@
+# Typography
+font-family = "Fira Code"
+font-size = 14
+font-thicken = true
+
+# Theme & Appearance
+theme = Peppermint
+background-opacity = 0.8
+# For linux(KDE)
+background-blur = true
+background-blur-radius = 15
+
+# Window & Mouse
+mouse-hide-while-typing = true
+window-padding-balance = true
+macos-titlebar-style = transparent
+
+# Quick-terminal window
+# Global hotkey to show/hide the Quick Terminal
+# 'global:' allows it to work even when Ghostty isn't focused
+keybind = global:F9=toggle_quick_terminal
+
+# Appearance & Position
+# Options: top, bottom, left, right, center
+quick-terminal-position = top
+quick-terminal-size = 85%
+quick-terminal-animation-duration = 0
+# On Linux(KDE) when autohide is true, the quick terminal will not disappear when the toggle key triggered
+# Only set to false
+quick-terminal-autohide = false
+
+# always running
+quit-after-last-window-closed = false
+
+shell-integration = fish
