@@ -31,5 +31,9 @@ quick-terminal-autohide = false
 
 # always running
 quit-after-last-window-closed = false
+# Alway maximize the window
+#maximize = true
+window-width = 90
+window-height = 38
 
 shell-integration = fish

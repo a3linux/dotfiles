@@ -23,7 +23,7 @@ Most common dotfiles used both for Linux and MacOS working environments to repla
 1. Git update
 
 ```
-git submodule foreach git pull origin master
+git submodule update --remote --merge
 git commit -am "-Update submodule folders"
 ```
 Be careful to commit other files with _-am_
