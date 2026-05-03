@@ -10,6 +10,12 @@ background-opacity = 0.8
 background-blur = true
 background-blur-radius = 15
 
+# Alway maximize the window
+#maximize = true
+# The window-width override the quick-terminal-size, comment it
+#window-width = 90
+window-height = 40
+
 # Window & Mouse
 mouse-hide-while-typing = true
 window-padding-balance = true
@@ -23,7 +29,7 @@ keybind = global:F9=toggle_quick_terminal
 # Appearance & Position
 # Options: top, bottom, left, right, center
 quick-terminal-position = top
-quick-terminal-size = 85%
+quick-terminal-size = 85%,99%
 quick-terminal-animation-duration = 0
 # On Linux(KDE) when autohide is true, the quick terminal will not disappear when the toggle key triggered
 # Only set to false
@@ -31,9 +37,5 @@ quick-terminal-autohide = false
 
 # always running
 quit-after-last-window-closed = false
-# Alway maximize the window
-#maximize = true
-window-width = 90
-window-height = 38
 
 shell-integration = fish
